@@ -6,9 +6,11 @@ function App() {
   const [showItem, setShowItem] = useState(["Milk", "Eggs", "Bread"]);
   const [toggle, setToggle] = useState([]);
 
-  function handleAdd() {
+  function handleAdd(e) {
+    e.preventDefault();
     setAddItem("");
     if (addItem.trim() === "") return;
+    if (showItem.includes(addItem)) return;
     setShowItem([...showItem, addItem]);
   }
   function handleFilter(Item) {
@@ -92,13 +94,16 @@ function AddItemToList({
   return (
     <div>
       <div className="add-item">
-        <input
-          type="text"
-          placeholder="Add an item"
-          value={addItem}
-          onChange={(e) => setAddItem(e.target.value)}
-        />
-        <input type="submit" value="Add" onClick={handleAdd} />
+        <form onSubmit={handleAdd} id={crypto.randomUUID()}>
+          <input
+            id="crypto.randomUUID()"
+            type="text"
+            placeholder="Add an item"
+            value={addItem}
+            onChange={(e) => setAddItem(e.target.value)}
+          />
+          <input type="submit" value="Add" />
+        </form>
       </div>
       <div className="all-delete">
         <button className="delete-button-all" onClick={handleDeleteAll}>

@@ -1,0 +1,239 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #101010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+p {
+  color: #fff;
+  margin: 0.7rem 0 0 0.3rem;
+}
+.container {
+  width: 90%;
+  max-width: 400px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.shopping-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.shopping-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #252525;
+  transition: background-color 0.3s ease;
+}
+
+.shopping-item:hover {
+  background-color: #353535;
+}
+
+.checkbox-container {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #1a1a1a;
+  border: 2px solid #55a9ff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked ~ .custom-checkbox {
+  background-color: #55a9ff;
+}
+
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked ~ .checkmark {
+  display: block;
+}
+
+.shopping-item label {
+  flex-grow: 1;
+  color: #d9d9d9;
+  word-break: break-all;
+  font-size: 16px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: #ff6e6e;
+  font-size: 18px;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+  color: #ff4d4d;
+}
+
+.add-item {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.add-item input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 2px solid #55a9ff;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #55a9ff;
+}
+
+.add-item input[type="submit"] {
+  margin-left: 10px;
+  padding: 10px 16px;
+  background-color: #55a9ff;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-item input[type="submit"]:hover {
+  background-color: #0f7ae5;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .shopping-item label {
+    font-size: 14px;
+  }
+
+  .add-item input[type="text"],
+  .add-item input[type="submit"] {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+.percentage {
+  color: #fff;
+  margin: 3rem;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.no-items {
+  color: #55a9ff;
+  margin: 3rem;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 0;
+}
+.welcome h2 {
+  font-size: medium;
+  color: #fff;
+  margin: 3rem;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.delete-button-all {
+  background-color: #ff5252;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.delete-button-all:hover {
+  background-color: #e51c23;
+}
+
+.delete-button-all i {
+  margin-right: 5px;
+}
+.all-delete {
+  margin: 2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.percentage-indicator {
+  margin: 0.7rem 0 0 2rem;
+  width: 200px;
+  height: 20px;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.progress-bar {
+  text-align: center;
+  height: 100%;
+  background-color: #55a9ff;
+  transition: width 0.5s ease-in-out;
+}

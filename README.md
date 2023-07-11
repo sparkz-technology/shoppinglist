@@ -6,7 +6,7 @@ This is a simple shopping list application built with React. It allows users to 
 
 1. Clone the repository:
    ```
-   git clone <repository_url>
+   git clone git@github.com:sparkz-technology/shoppinglist.git
    ```
 2. Navigate to the project directory:
    ```
